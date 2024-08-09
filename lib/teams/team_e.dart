@@ -1,4 +1,6 @@
 import 'package:bitirmeprojesi/main_page.dart';
+import 'package:bitirmeprojesi/profile_team_page.dart';
+import 'package:bitirmeprojesi/teams/team_e_join.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
@@ -11,10 +13,24 @@ class TeamEPage extends StatefulWidget {
 }
 
 class _TeamEPageState extends State<TeamEPage> {
-
   Query dbRef = FirebaseDatabase.instance.ref().child('teame');
   DatabaseReference reference = FirebaseDatabase.instance.ref().child('teame');
   final TextEditingController _searchController = TextEditingController();
+  int teamCount = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    getTeamCount();
+  }
+
+  Future<void> getTeamCount() async {
+    DataSnapshot snapshot = await reference.get();
+    setState(() {
+      teamCount = snapshot.children.length;
+    });
+  }
+
   Widget listItem({required Map teame}) {
     return Padding(
       padding: const EdgeInsets.all(5.0),
@@ -107,7 +123,7 @@ class _TeamEPageState extends State<TeamEPage> {
                     color: Colors.black,
                   ),
                   title: Text(
-                    'Maç: '+teame['MAÇ'],
+                    'Maç: ' + teame['MAÇ'],
                     style: const TextStyle(color: Colors.black),
                   ),
                 ),
@@ -126,7 +142,7 @@ class _TeamEPageState extends State<TeamEPage> {
                     color: Colors.black,
                   ),
                   title: Text(
-                    'Gol: '+teame['GOL'],
+                    'Gol: ' + teame['GOL'],
                     style: const TextStyle(color: Colors.black),
                   ),
                 ),
@@ -164,7 +180,7 @@ class _TeamEPageState extends State<TeamEPage> {
                     color: Colors.yellow,
                   ),
                   title: Text(
-                    'Sarı Kart: '+teame['SARI'],
+                    'Sarı Kart: ' + teame['SARI'],
                     style: const TextStyle(color: Colors.black),
                   ),
                 ),
@@ -183,7 +199,7 @@ class _TeamEPageState extends State<TeamEPage> {
                     color: Colors.red,
                   ),
                   title: Text(
-                    'Kırmızı Kart: '+teame['KIRMIZI'],
+                    'Kırmızı Kart: ' + teame['KIRMIZI'],
                     style: const TextStyle(color: Colors.black),
                   ),
                 ),
@@ -202,7 +218,7 @@ class _TeamEPageState extends State<TeamEPage> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.blue.shade800,
-        title: Text('E Takımı'),
+        title: const Text('E Takımı'),
         leading: BackButton(
           onPressed: () {
             Navigator.pop(context);
@@ -218,18 +234,42 @@ class _TeamEPageState extends State<TeamEPage> {
       backgroundColor: Colors.grey,
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Container(
-          height: double.infinity,
-          child: FirebaseAnimatedList(
-            query: dbRef,
-            itemBuilder: (BuildContext context, DataSnapshot snapshot,
-                Animation<double> animation, int index) {
-              Map teame = snapshot.value as Map;
-              teame['ID'] = snapshot.key;
+        child: Column(
+          children: [
+            Text(
+              'Takımda $teamCount Kişi Var',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+            const SizedBox(height: 10),
+            Expanded(
+              child: FirebaseAnimatedList(
+                query: dbRef,
+                itemBuilder: (BuildContext context, DataSnapshot snapshot,
+                    Animation<double> animation, int index) {
+                  Map teame = snapshot.value as Map;
+                  teame['ID'] = snapshot.key;
 
-              return listItem(teame: teame);
-            },
-          ),
+                  return listItem(teame: teame);
+                },
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const TeamEJoinPage(),
+                  ),
+                );
+              },
+              child: const Text('Takıma Katıl'),
+            ),
+          ],
         ),
       ),
     );

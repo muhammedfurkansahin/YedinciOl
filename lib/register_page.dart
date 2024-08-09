@@ -1,3 +1,4 @@
+import 'package:bitirmeprojesi/login_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -181,8 +182,18 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
 
                     GestureDetector(
-                      onTap: widget.showLoginPage,
-                      child: Text(" Giriş Yap",
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return LoginPage(showRegisterPage:  () {  },);
+                            },
+                          ),
+                        );
+                      },
+                      child: Text(
+                        "Giriş Yap",
                         style: TextStyle(
                           color: Colors.blue,
                           fontWeight: FontWeight.bold,

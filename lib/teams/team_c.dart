@@ -1,4 +1,6 @@
 import 'package:bitirmeprojesi/main_page.dart';
+import 'package:bitirmeprojesi/profile_team_page.dart';
+import 'package:bitirmeprojesi/teams/team_c_join.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
@@ -11,10 +13,24 @@ class TeamCPage extends StatefulWidget {
 }
 
 class _TeamCPageState extends State<TeamCPage> {
-
   Query dbRef = FirebaseDatabase.instance.ref().child('teamc');
   DatabaseReference reference = FirebaseDatabase.instance.ref().child('teamc');
   final TextEditingController _searchController = TextEditingController();
+  int teamCount = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    getTeamCount();
+  }
+
+  Future<void> getTeamCount() async {
+    DataSnapshot snapshot = await reference.get();
+    setState(() {
+      teamCount = snapshot.children.length;
+    });
+  }
+
   Widget listItem({required Map teamc}) {
     return Padding(
       padding: const EdgeInsets.all(5.0),
@@ -107,7 +123,7 @@ class _TeamCPageState extends State<TeamCPage> {
                     color: Colors.black,
                   ),
                   title: Text(
-                    'Maç: '+teamc['MAÇ'],
+                    'Maç: ' + teamc['MAÇ'],
                     style: const TextStyle(color: Colors.black),
                   ),
                 ),
@@ -126,7 +142,7 @@ class _TeamCPageState extends State<TeamCPage> {
                     color: Colors.black,
                   ),
                   title: Text(
-                    'Gol: '+teamc['GOL'],
+                    'Gol: ' + teamc['GOL'],
                     style: const TextStyle(color: Colors.black),
                   ),
                 ),
@@ -164,7 +180,7 @@ class _TeamCPageState extends State<TeamCPage> {
                     color: Colors.yellow,
                   ),
                   title: Text(
-                    'Sarı Kart: '+teamc['SARI'],
+                    'Sarı Kart: ' + teamc['SARI'],
                     style: const TextStyle(color: Colors.black),
                   ),
                 ),
@@ -183,7 +199,7 @@ class _TeamCPageState extends State<TeamCPage> {
                     color: Colors.red,
                   ),
                   title: Text(
-                    'Kırmızı Kart: '+teamc['KIRMIZI'],
+                    'Kırmızı Kart: ' + teamc['KIRMIZI'],
                     style: const TextStyle(color: Colors.black),
                   ),
                 ),
@@ -202,7 +218,7 @@ class _TeamCPageState extends State<TeamCPage> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.blue.shade800,
-        title: Text('C Takımı'),
+        title: const Text('C Takımı'),
         leading: BackButton(
           onPressed: () {
             Navigator.pop(context);
@@ -218,18 +234,42 @@ class _TeamCPageState extends State<TeamCPage> {
       backgroundColor: Colors.grey,
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Container(
-          height: double.infinity,
-          child: FirebaseAnimatedList(
-            query: dbRef,
-            itemBuilder: (BuildContext context, DataSnapshot snapshot,
-                Animation<double> animation, int index) {
-              Map teamc = snapshot.value as Map;
-              teamc['ID'] = snapshot.key;
+        child: Column(
+          children: [
+            Text(
+              'Takımda $teamCount Kişi Var',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+            const SizedBox(height: 10),
+            Expanded(
+              child: FirebaseAnimatedList(
+                query: dbRef,
+                itemBuilder: (BuildContext context, DataSnapshot snapshot,
+                    Animation<double> animation, int index) {
+                  Map teamc = snapshot.value as Map;
+                  teamc['ID'] = snapshot.key;
 
-              return listItem(teamc: teamc);
-            },
-          ),
+                  return listItem(teamc: teamc);
+                },
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const TeamCJoinPage(),
+                  ),
+                );
+              },
+              child: const Text('Takıma Katıl'),
+            ),
+          ],
         ),
       ),
     );

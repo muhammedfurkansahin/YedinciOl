@@ -24,7 +24,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
     showDialog(
       context: context,
       builder: (context) {
-        return AlertDialog(
+        return const AlertDialog(
           content: Text("Şifreniz Değiştirme İçin Mailiniz Kontrol Ediniz"),
         );
       },
@@ -52,15 +52,15 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
       body: Column (
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Text (
                 "E-Mailinizi Giriniz",
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 30),
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           //E-MAİL GİRİŞİ
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -68,11 +68,11 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               controller: _emailController,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.white),
+                  borderSide: const BorderSide(color: Colors.white),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.blue),
+                  borderSide: const BorderSide(color: Colors.blue),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 hintText: "E-Mailiniz",
@@ -81,10 +81,10 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               ),
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           MaterialButton(
               onPressed: passwordReset,
-              child: Text("Şifrenizi Sıfırlama"),
+              child: const Text("Şifrenizi Sıfırlama"),
               color: Colors.blue,
           ),
         ],

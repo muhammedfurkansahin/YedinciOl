@@ -29,7 +29,7 @@ class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: Colors.blue[200],
+      backgroundColor: Colors.blue.withOpacity(0.8),
       child: Column(
         children: [
           // Drawer header
@@ -54,8 +54,8 @@ class MyDrawer extends StatelessWidget {
                 color: Colors.black,
               ),
               onTap: () {},
-              title: Text(
-                'deneme@gmail.com olarak giriş yapıldı',
+              title: const Text(
+                'x olarak giriş yapıldı',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 15,
@@ -77,7 +77,7 @@ class MyDrawer extends StatelessWidget {
                   ),
                 );
               },
-              child: ListTile(
+              child: const ListTile(
                 leading: Icon(
                   Icons.home_rounded,
                   color: Colors.black,
@@ -131,7 +131,7 @@ class MyDrawer extends StatelessWidget {
                   ),
                 );
               },
-              child: ListTile(
+              child: const ListTile(
                 leading: Icon(
                   Icons.info,
                   color: Colors.black,
@@ -153,7 +153,7 @@ class MyDrawer extends StatelessWidget {
                 color: Colors.black,
               ),
               onTap: () => logUserOut(context),
-              title: Text(
+              title: const Text(
                 "Çıkış Yap",
                 style: TextStyle(color: Colors.black),
               ),
