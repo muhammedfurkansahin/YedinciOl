@@ -56,7 +56,8 @@ class _TeamEPageState extends State<TeamEPage> {
                       alignment: Alignment.centerLeft,
                       child: Text(
                         'Ad: ' + teame['AD'],
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                        style: const TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w400),
                       ),
                     ),
                     const SizedBox(
@@ -66,7 +67,8 @@ class _TeamEPageState extends State<TeamEPage> {
                       alignment: Alignment.centerLeft,
                       child: Text(
                         'Soyad: ' + teame['SOYAD'],
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                        style: const TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w400),
                       ),
                     ),
                     const SizedBox(
@@ -76,14 +78,16 @@ class _TeamEPageState extends State<TeamEPage> {
                       alignment: Alignment.centerLeft,
                       child: Text(
                         'Pozisyon: ' + teame['POZİSYON'],
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                        style: const TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w400),
                       ),
                     ),
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         'Yaş: ' + teame['YAŞ'],
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                        style: const TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w400),
                       ),
                     ),
                   ],
@@ -238,7 +242,7 @@ class _TeamEPageState extends State<TeamEPage> {
           children: [
             Text(
               'Takımda $teamCount Kişi Var',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,

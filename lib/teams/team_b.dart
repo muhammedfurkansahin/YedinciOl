@@ -56,7 +56,8 @@ class _TeamBPageState extends State<TeamBPage> {
                       alignment: Alignment.centerLeft,
                       child: Text(
                         'Ad: ' + teamb['AD'],
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w400),
                       ),
                     ),
                     const SizedBox(
@@ -66,7 +67,8 @@ class _TeamBPageState extends State<TeamBPage> {
                       alignment: Alignment.centerLeft,
                       child: Text(
                         'Soyad: ' + teamb['SOYAD'],
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w400),
                       ),
                     ),
                     const SizedBox(
@@ -76,14 +78,16 @@ class _TeamBPageState extends State<TeamBPage> {
                       alignment: Alignment.centerLeft,
                       child: Text(
                         'Pozisyon: ' + teamb['POZİSYON'],
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w400),
                       ),
                     ),
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         'Yaş: ' + teamb['YAŞ'],
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w400),
                       ),
                     ),
                   ],

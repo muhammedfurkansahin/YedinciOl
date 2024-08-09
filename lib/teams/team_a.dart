@@ -56,7 +56,8 @@ class _TeamAPageState extends State<TeamAPage> {
                       alignment: Alignment.centerLeft,
                       child: Text(
                         'Ad: ' + teama['AD'],
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w400),
                       ),
                     ),
                     const SizedBox(
@@ -66,7 +67,8 @@ class _TeamAPageState extends State<TeamAPage> {
                       alignment: Alignment.centerLeft,
                       child: Text(
                         'Soyad: ' + teama['SOYAD'],
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w400),
                       ),
                     ),
                     const SizedBox(
@@ -76,14 +78,16 @@ class _TeamAPageState extends State<TeamAPage> {
                       alignment: Alignment.centerLeft,
                       child: Text(
                         'Pozisyon: ' + teama['POZİSYON'],
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w400),
                       ),
                     ),
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         'Yaş: ' + teama['YAŞ'],
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w400),
                       ),
                     ),
                   ],
