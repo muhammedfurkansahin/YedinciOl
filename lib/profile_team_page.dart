@@ -22,7 +22,7 @@ class _ProfileTeamPageState extends State<ProfileTeamPage> {
         child: ListView(
           padding: const EdgeInsets.all(16),
           children: <Widget>[
-            Center(
+            const Center(
               child: Text(
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
@@ -30,7 +30,7 @@ class _ProfileTeamPageState extends State<ProfileTeamPage> {
                   ),
                   'TAKIMLAR'),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             GestureDetector(
               onTap: () {
                 Navigator.pop(context);
@@ -43,7 +43,7 @@ class _ProfileTeamPageState extends State<ProfileTeamPage> {
               },
               child: Column(
                 children: [
-                  Center(
+                  const Center(
                     child: Text(
                         style: TextStyle(fontWeight: FontWeight.bold),
                         'A-TAKIMI'),
@@ -69,7 +69,7 @@ class _ProfileTeamPageState extends State<ProfileTeamPage> {
               },
               child: Column(
                 children: [
-                  Center(
+                  const Center(
                     child: Text(
                         style: TextStyle(fontWeight: FontWeight.bold),
                         "B-TAKIMI"),
@@ -83,7 +83,7 @@ class _ProfileTeamPageState extends State<ProfileTeamPage> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             GestureDetector(
               onTap: () {
                 Navigator.pop(context);
@@ -94,7 +94,7 @@ class _ProfileTeamPageState extends State<ProfileTeamPage> {
               },
               child: Column(
                 children: [
-                  Center(
+                  const Center(
                     child: Text(
                         style: TextStyle(fontWeight: FontWeight.bold),
                         "C-TAKIMI"),
@@ -108,7 +108,7 @@ class _ProfileTeamPageState extends State<ProfileTeamPage> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             GestureDetector(
               onTap: () {
                 Navigator.pop(context);
@@ -119,7 +119,7 @@ class _ProfileTeamPageState extends State<ProfileTeamPage> {
               },
               child: Column(
                 children: [
-                  Center(
+                  const Center(
                     child: Text(
                         style: TextStyle(fontWeight: FontWeight.bold),
                         "D-TAKIMI"),
@@ -134,7 +134,7 @@ class _ProfileTeamPageState extends State<ProfileTeamPage> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             GestureDetector(
               onTap: () {
                 Navigator.pop(context);
@@ -147,7 +147,7 @@ class _ProfileTeamPageState extends State<ProfileTeamPage> {
               },
               child: Column(
                 children: [
-                  Center(
+                  const Center(
                     child: Text(
                         style: TextStyle(fontWeight: FontWeight.bold),
                         "E-TAKIMI"),

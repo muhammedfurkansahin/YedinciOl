@@ -13,7 +13,7 @@ class _HomePageState extends State<HomePage> {
   void _openWebView(String url) {
     Navigator.of(context).push(MaterialPageRoute(
       builder: (context) => Scaffold(
-        appBar: AppBar(title: Text('Web Görünümü')),
+        appBar: AppBar(title: const Text('Web Görünümü')),
         body: InAppWebView(
           initialUrlRequest: URLRequest(url: Uri.parse(url)),
           initialOptions: InAppWebViewGroupOptions(
@@ -61,7 +61,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             GestureDetector(
               onTap: () => _openWebView(
                   'https://www.transfermarkt.com.tr/spieler-statistik/marktwertaenderungen/marktwertetop'), // Bağlantılarınızı uygun URL'lerle değiştirin
@@ -86,7 +86,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             GestureDetector(
               onTap: () => _openWebView(
                   'https://www.fotomac.com.tr/besiktas/2024/03/19/besiktas-haberler-cenk-tosun-planini-degistirdi-transfer'), // Bağlantılarınızı uygun URL'lerle değiştirin
@@ -111,7 +111,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             GestureDetector(
               onTap: () => _openWebView(
                   'https://www.sondakika.com/yerel/haber-bursa-da-gencler-icin-bir-tesis-de-panayir-a-16953605/'), // Bağlantılarınızı uygun URL'lerle değiştirin
@@ -136,7 +136,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             GestureDetector(
               onTap: () => _openWebView(
                   'https://www.sondakika.com/guncel/haber-genclik-ve-spor-bakani-bolu-ataturk-stadyumu-nu-ye-16952009/'), // Bağlantılarınızı uygun URL'lerle değiştirin
@@ -161,7 +161,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
           ],
         ),
       ),

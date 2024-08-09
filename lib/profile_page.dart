@@ -1,9 +1,5 @@
-import 'dart:ffi';
 import 'package:bitirmeprojesi/update_profile.dart';
 import 'package:flutter/material.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/src/painting/text_style.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -37,13 +33,13 @@ class _ProfilePageState extends State<ProfilePage> {
             Center(
               child: Column(
                 children: [
-                  CircleAvatar(
+                  const CircleAvatar(
                     radius: 60,
                     backgroundImage: NetworkImage(
                       'https://www.pngall.com/wp-content/uploads/5/Profile-Male-PNG.png',
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   _buildInfoRow('Ad', profileData['name']!),
                   _buildInfoRow('Soyad', profileData['surname']!),
                   _buildInfoRow('Yaş', profileData['age']!),
@@ -57,13 +53,13 @@ class _ProfilePageState extends State<ProfilePage> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Image.network(
               'https://galeri14.uludagsozluk.com/805/en-iyi-hali-saha-taktikleri_1643717.jpg',
               height: 300,
               fit: BoxFit.cover,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -80,7 +76,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                 );
               },
-              child: Text('Profili Düzenle'),
+              child: const Text('Profili Düzenle'),
             ),
           ],
         ),
@@ -96,15 +92,15 @@ class _ProfilePageState extends State<ProfilePage> {
         children: [
           Text(
             label + ':',
-            style: TextStyle(
+            style: const TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 16,
             ),
           ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           Text(
             value,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16,
             ),
           ),

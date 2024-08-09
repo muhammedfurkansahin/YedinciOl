@@ -1,8 +1,5 @@
 import 'package:bitirmeprojesi/main_page.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'components/my_bottom_nav_bar.dart';
-import 'components/my_drawer.dart';
 
 class HelpPage extends StatefulWidget {
   const HelpPage({Key? key}) : super(key: key);
@@ -23,14 +20,14 @@ class _HelpPageState extends State<HelpPage> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => MainPage(),
+                builder: (context) => const MainPage(),
               ),
             );
           },
         ),
         backgroundColor: Colors.blue[800],
         elevation: 0,
-        title: Text(
+        title: const Text(
           'Yardım',
           style: TextStyle(color: Colors.black),
         ),
@@ -40,7 +37,7 @@ class _HelpPageState extends State<HelpPage> {
         child: ListView(
           children: <Widget>[
             Icon(Icons.sports_soccer, size: 100, color: Colors.blue[800]),
-            Center(
+            const Center(
               child: Text(
                 '''Hoşgeldiniz
     ''',
@@ -51,18 +48,17 @@ class _HelpPageState extends State<HelpPage> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
-            Center(
+            const SizedBox(height: 20),
+            const Center(
                 child: Text(
               textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontSize: 16.0,
-
-                  ),
+              style: TextStyle(
+                fontSize: 16.0,
+              ),
               'Yedinci Ol! uygulamasının yardım sayfasına hoş geldiniz. Bu sayfa, uygulamanın kullanımı ve temel özellikleri hakkında size rehberlik etmek için tasarlanmıştır.',
             )),
-            SizedBox(height: 20),
-            Center(
+            const SizedBox(height: 20),
+            const Center(
               child: Text(
                 '''
     Soldaki Çekmeceler
@@ -74,16 +70,16 @@ class _HelpPageState extends State<HelpPage> {
                 ),
               ),
             ),
-            Center(
+            const Center(
                 child: Text(
               textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontSize: 16.0,
-                  ),
+              style: TextStyle(
+                fontSize: 16.0,
+              ),
               'Sol taraftaki çekmeli sayfadan "Hakkımızda" bölümüne erişebilirsiniz. Aynı zamanda ana sayfaya dönüş ve çıkış işlemleri için bu menüyü kullanabilirsiniz. ',
             )),
-            SizedBox(height: 30),
-            Center(
+            const SizedBox(height: 30),
+            const Center(
               child: Text(
                 '''
     Navigasyon Bar
@@ -95,7 +91,7 @@ class _HelpPageState extends State<HelpPage> {
                 ),
               ),
             ),
-            Center(
+            const Center(
               child: Text(
                 '''
     Alt kısımdaki navigasyon çubuğu, uygulamanın ana bölümlerine hızlıca erişmenizi sağlar:
@@ -111,7 +107,7 @@ class _HelpPageState extends State<HelpPage> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
           ],
         ),
       ),
