@@ -17,6 +17,10 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) => Scaffold(
       body: GoogleMap(
+        buildingsEnabled: true,
+        zoomGesturesEnabled: true,
+        tiltGesturesEnabled: true,
+
         onMapCreated: _onMapCreated,
         initialCameraPosition: CameraPosition(
             target: _center,
